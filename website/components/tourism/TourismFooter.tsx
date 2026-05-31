@@ -16,6 +16,7 @@ export function TourismFooter({ template }: TourismFooterProps) {
           <div>
             <p className="text-xl font-extrabold text-gold">{site.name}</p>
             <p className="mt-2 text-sm text-white/70">{site.location}</p>
+            <p className="mt-1 text-sm text-white/60">{site.address}</p>
             <p className="mt-4 text-sm leading-relaxed text-white/60">
               {footer.description}
             </p>
@@ -34,16 +35,6 @@ export function TourismFooter({ template }: TourismFooterProps) {
                   {site.phone}
                 </a>
               </li>
-              {site.phoneAlt && (
-                <li>
-                  <a
-                    href={`tel:${site.phoneAlt.replace(/\s/g, "")}`}
-                    className="text-white/70 hover:text-gold"
-                  >
-                    {site.phoneAlt}
-                  </a>
-                </li>
-              )}
               <li>
                 <a href={`mailto:${site.email}`} className="text-white/70 hover:text-gold">
                   {site.email}
@@ -51,12 +42,22 @@ export function TourismFooter({ template }: TourismFooterProps) {
               </li>
               <li>
                 <a
-                  href={site.whatsapp}
+                  href={site.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-[#25D366] hover:underline"
+                  className="text-white/70 hover:text-gold"
                 >
-                  WhatsApp us
+                  Facebook
+                </a>
+              </li>
+              <li>
+                <a
+                  href={site.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-gold"
+                >
+                  Instagram
                 </a>
               </li>
             </ul>
@@ -81,11 +82,6 @@ export function TourismFooter({ template }: TourismFooterProps) {
                     </Link>
                   </li>
                 ))}
-              <li>
-                <Link href={site.chatHref} className="text-white/70 hover:text-gold">
-                  Chat with Micah
-                </Link>
-              </li>
             </ul>
           </div>
         </div>

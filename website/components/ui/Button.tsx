@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-type ButtonVariant = "primary" | "secondary" | "outline" | "whatsapp";
+type ButtonVariant = "primary" | "secondary" | "outline" | "outlineDark" | "whatsapp";
 
 const variants: Record<ButtonVariant, string> = {
   primary:
@@ -9,6 +9,8 @@ const variants: Record<ButtonVariant, string> = {
     "bg-gold text-charcoal hover:bg-gold-light shadow-md shadow-gold/25",
   outline:
     "border-2 border-white/90 bg-white/10 text-white backdrop-blur-sm hover:bg-white/20",
+  outlineDark:
+    "border-2 border-forest/80 bg-white text-forest hover:bg-forest hover:text-white",
   whatsapp:
     "bg-[#25D366] text-white hover:bg-[#1fb855] shadow-md shadow-[#25D366]/25",
 };
@@ -19,6 +21,7 @@ type ButtonProps = {
   variant?: ButtonVariant;
   className?: string;
   external?: boolean;
+  ariaLabel?: string;
 };
 
 export function Button({
@@ -27,17 +30,20 @@ export function Button({
   variant = "primary",
   className = "",
   external,
+  ariaLabel,
 }: ButtonProps) {
   const base =
     "inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-6 py-3 text-center text-sm font-bold transition-colors sm:text-base";
+  const isWebUrl = href.startsWith("http");
 
   if (external) {
     return (
       <a
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={isWebUrl ? "_blank" : undefined}
+        rel={isWebUrl ? "noopener noreferrer" : undefined}
         className={`${base} ${variants[variant]} ${className}`}
+        aria-label={ariaLabel}
       >
         {children}
       </a>
@@ -45,7 +51,11 @@ export function Button({
   }
 
   return (
-    <Link href={href} className={`${base} ${variants[variant]} ${className}`}>
+    <Link
+      href={href}
+      className={`${base} ${variants[variant]} ${className}`}
+      aria-label={ariaLabel}
+    >
       {children}
     </Link>
   );

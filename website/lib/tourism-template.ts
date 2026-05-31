@@ -7,8 +7,9 @@ export type TourismIcon =
 
 export type TourismCta = {
   label: string;
+  ariaLabel?: string;
   href: string;
-  variant?: "primary" | "secondary" | "outline" | "whatsapp";
+  variant?: "primary" | "secondary" | "outline" | "outlineDark" | "whatsapp";
   external?: boolean;
   icon?: "chat" | "whatsapp";
 };
@@ -18,13 +19,24 @@ export type TourismSite = {
   shortName: string;
   tagline: string;
   location: string;
+  address: string;
   phone: string;
-  phoneAlt?: string;
   email: string;
   whatsapp: string;
+  facebook: string;
+  instagram: string;
+  mapsHref: string;
+  hipcampHref: string;
   bookHref: string;
-  chatHref: string;
   description: string;
+  url: string;
+  keywords: string[];
+  ogImage: {
+    src: string;
+    width: number;
+    height: number;
+    alt: string;
+  };
 };
 
 export type TourismNavLink = {
@@ -87,33 +99,15 @@ export type TourismBooking = {
   footnote: string;
 };
 
-export type TourismMicahScw = {
-  intro: TourismSectionIntro;
-  features: Array<{
-    title: string;
-    text: string;
-  }>;
-  cta: TourismCta;
-  placeholder: {
-    eyebrow: string;
-    messages: Array<{
-      from: "guest" | "micah";
-      text: string;
-    }>;
-    footer: string;
-  };
-  bubble: {
-    greeting: string;
-    status: string;
-    footer: string;
-    primaryCta: TourismCta;
-    secondaryCta: TourismCta;
-  };
-};
-
 export type TourismFaq = {
   question: string;
   answer: string;
+};
+
+export type TourismOwner = {
+  name: string;
+  role?: string;
+  description: string;
 };
 
 export type TourismHomeTemplate = {
@@ -130,10 +124,20 @@ export type TourismHomeTemplate = {
     items: TourismGalleryItem[];
   };
   booking: TourismBooking;
-  micah: TourismMicahScw;
+  safety: {
+    intro: TourismSectionIntro;
+    notice: string;
+  };
+  owners: {
+    intro: TourismSectionIntro;
+    items: TourismOwner[];
+  };
   faq: {
     intro: TourismSectionIntro;
     items: TourismFaq[];
+  };
+  contact: {
+    intro: TourismSectionIntro;
   };
   footer: {
     description: string;

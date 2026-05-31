@@ -21,6 +21,7 @@ export function TourismCtaGroup({
           href={cta.href}
           variant={cta.variant}
           external={cta.external}
+          ariaLabel={cta.ariaLabel}
           className={itemClassName}
         >
           {cta.icon === "chat" && <ChatIcon />}

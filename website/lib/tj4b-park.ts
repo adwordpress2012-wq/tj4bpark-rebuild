@@ -2,46 +2,83 @@ import type { TourismHomeTemplate } from "@/lib/tourism-template";
 
 export const tj4bParkTemplate = {
   site: {
-    name: "TJ's 4B Park",
-    shortName: "TJ4B Park",
-    tagline: "Relaxation and adventure - all in the one park",
-    location: "Howes Valley, NSW",
+    name: "TJ’s 4B Park & Camping",
+    shortName: "TJ’s 4B Park",
+    tagline: "Camping, 4WD adventures, glamping and outdoor experiences",
+    location: "Howes Valley NSW",
+    address: "Unnamed Road, Howes Valley NSW 2330, Australia",
     phone: "0405 672 522",
-    phoneAlt: "0412 293 574",
     email: "tjs4wdcamping@gmail.com",
     whatsapp: "https://wa.me/61405672522",
+    facebook: "https://www.facebook.com/howesvalley/",
+    instagram: "https://www.instagram.com/tjs4bpark/",
+    mapsHref:
+      "https://www.google.com/maps/search/?api=1&query=Unnamed%20Road%2C%20Howes%20Valley%20NSW%202330%2C%20Australia",
+    hipcampHref: "#hipcamp-coming-soon",
     bookHref: "#book",
-    chatHref: "#micah",
     description:
-      "Family-owned camping, glamping, 4WD tracks and buggy rides across more than 1,000 acres of natural bush in Howes Valley, NSW.",
+      "Camping, 4WD adventures, glamping and outdoor experiences in Howes Valley NSW.",
+    url: "https://tj4bpark.com.au",
+    keywords: [
+      "TJ’s 4B Park",
+      "TJ4B Park",
+      "Howes Valley camping",
+      "Howes Valley NSW",
+      "Hunter Valley camping",
+      "NSW 4WD park",
+      "4WD tracks NSW",
+      "glamping Howes Valley",
+      "buggy rides NSW",
+      "bush camping NSW",
+      "family camping NSW",
+      "group camping Howes Valley",
+      "weekend camping near Sydney",
+      "tourism Howes Valley",
+    ],
+    ogImage: {
+      src: "/images/branding/tj4b-park-og.jpg",
+      width: 1200,
+      height: 630,
+      alt: "TJ’s 4B Park camping, glamping and 4WD adventure in Howes Valley NSW",
+    },
   },
   nav: [
     { href: "#activities", label: "Activities" },
-    { href: "#gallery", label: "Gallery" },
     { href: "#book", label: "Book" },
     { href: "#faq", label: "FAQ" },
+    { href: "#contact", label: "Contact" },
   ],
   hero: {
     eyebrow: "Howes Valley, NSW",
-    title: "Relaxation and adventure - all in the one park",
+    title: "TJ’s 4B Park & Camping",
     description:
-      "Over 1,000 acres of natural bush - rocky tracks, green grass, seasonal creek, and room to camp, glamp, or get dirty behind the wheel. Family owned by Jamie and Tanya. Bookings compulsory so it never feels crowded.",
+      "Camping, 4WD adventures, glamping and outdoor experiences in Howes Valley NSW.",
     image: {
       label: "Outdoor adventure - bush, tracks and valley views",
-      alt: "Bushland tracks and valley views at TJ's 4B Park",
+      alt: "Bushland tracks and camping at TJ’s 4B Park & Camping",
     },
     ctas: [
-      { label: "Book Your Stay", href: "#book", variant: "secondary" },
-      { label: "Chat With Micah", href: "#micah", variant: "outline", icon: "chat" },
       {
-        label: "WhatsApp Us",
-        href: "https://wa.me/61405672522",
-        variant: "whatsapp",
+        label: "Book Now",
+        ariaLabel: "Go to the booking and enquiry section",
+        href: "#book",
+        variant: "secondary",
+      },
+      {
+        label: "Call 0405 672 522",
+        ariaLabel: "Call TJ’s 4B Park & Camping",
+        href: "tel:0405672522",
+        variant: "primary",
+      },
+      {
+        label: "Visit Facebook",
+        ariaLabel: "Visit TJ’s 4B Park & Camping on Facebook",
+        href: "https://www.facebook.com/howesvalley/",
+        variant: "outline",
         external: true,
-        icon: "whatsapp",
       },
     ],
-    footnote: "Prefer a yarn? Call",
+    footnote: "For bookings and enquiries, call",
   },
   trustItems: [
     { label: "Camping", icon: "tent" },
@@ -52,54 +89,46 @@ export const tj4bParkTemplate = {
   ],
   activities: {
     intro: {
-      eyebrow: "What you can do",
-      title: "Camp, glamp, explore - your way",
+      eyebrow: "Things to do",
+      title: "Camping, tracks and outdoor fun",
       description:
-        "Whether you want a quiet weekend listening to the wildlife or a full-send day on the tracks, there's something here for you and your crew.",
+        "A simple snapshot of what is available while the full website is being rebuilt.",
     },
     items: [
       {
         title: "Camping",
         description:
-          "Communal camp areas and separated spots for extra privacy. Flushable toilets, hot showers, and plenty of bush to explore.",
+          "Bring your setup and enjoy a bush camping stay in Howes Valley. Contact the team before you arrive.",
         tag: "Book ahead",
-        image: { alt: "Camping setup in the bush at TJ's 4B Park" },
+        image: { alt: "Camping setup in the bush at TJ’s 4B Park & Camping" },
       },
       {
-        title: "Gumnut's Glamping",
+        title: "Glamping",
         description:
-          "Where a million stars is your view. Comfortable tents without roughing it - check out the photos and ask us for availability.",
-        tag: "Popular",
-        image: { alt: "Glamping tent under the stars at Gumnut's" },
-        note: '"Where a million stars is your view"',
+          "Ask about current glamping availability and options when you make your enquiry.",
+        tag: "Ask first",
+        image: { alt: "Glamping accommodation placeholder at TJ’s 4B Park & Camping" },
       },
       {
-        title: "4WD Tracks",
+        title: "4WD tracks",
         description:
-          "Rocky mountain terrain and lush bush. Our team can point you to tracks that suit your experience level.",
+          "Explore 4WD tracks suited to outdoor adventure. Check conditions and requirements before driving.",
         tag: "Adventure",
-        image: { alt: "4WD vehicle on rocky bush track" },
+        image: { alt: "4WD vehicle on a bush track" },
       },
       {
-        title: "Buggy Joy Rides",
+        title: "Buggy joy rides / kids quad rides",
         description:
-          "Get out and enjoy the property from a different angle. See our buggy rides page for session info and pricing.",
-        tag: "Must try",
-        image: { alt: "Buggy ride through TJ's 4B Park" },
+          "Fun ride options may be available for visitors and kids. Contact the team for current details.",
+        tag: "Enquire",
+        image: { alt: "Buggy joy rides and kids quad rides" },
       },
       {
-        title: "Bushwalks & Wildlife",
+        title: "Events / group visits",
         description:
-          "Sit back and listen to the wildlife, or wander the seasonal creek and crystal-clear water when it's flowing.",
-        tag: "Family friendly",
-        image: { alt: "Bushwalking and wildlife areas at TJ's 4B Park" },
-      },
-      {
-        title: "Events & Groups",
-        description:
-          "Work parties, clubs, or a quiet getaway with mates - we've got space for you. Bookings are compulsory so it never gets overcrowded.",
+          "Planning a group visit, club weekend or event? Get in touch to talk through dates and requirements.",
         tag: "Groups welcome",
-        image: { alt: "Group camping and events space at TJ's 4B Park" },
+        image: { alt: "Group camping and outdoor events at TJ’s 4B Park & Camping" },
       },
     ],
   },
@@ -121,130 +150,178 @@ export const tj4bParkTemplate = {
   },
   booking: {
     intro: {
-      eyebrow: "Make it official",
-      title: "Book your stay",
+      eyebrow: "Bookings and enquiries",
+      title: "Book now or contact the team",
       description:
-        "Bookings are compulsory - we keep numbers limited so everyone has room to breathe. Check availability and lock in your dates below.",
+        "Bookings and enquiries can be made using the contact links below while the new DOS booking system is being built.",
     },
     calendar: {
-      eyebrow: "Powered by DOS",
-      title: "Availability Calendar",
-      badge: "Placeholder",
-      ariaLabel: "DOS Calendar booking widget placeholder",
+      eyebrow: "Temporary booking options",
+      title: "Contact TJ’s 4B Park & Camping",
+      badge: "Coming soon",
+      ariaLabel: "Temporary booking contact options",
       description:
-        "DOS Calendar will live here - guests pick dates, see what's open, and submit a booking without the back-and-forth.",
+        "Use phone, email, Facebook or Instagram for now. Hipcamp and more booking options are coming soon.",
     },
     ctas: [
       {
-        label: "WhatsApp to Book",
-        href: "https://wa.me/61405672522",
-        variant: "whatsapp",
-        external: true,
+        label: "Call 0405 672 522",
+        ariaLabel: "Call TJ’s 4B Park on 0405 672 522",
+        href: "tel:0405672522",
+        variant: "primary",
       },
       {
-        label: "Call 0405 672 522",
-        href: "tel:0405672522",
+        label: "Email Enquiry",
+        ariaLabel: "Email TJ’s 4B Park & Camping",
+        href: "mailto:tjs4wdcamping@gmail.com",
+        variant: "secondary",
+      },
+      {
+        label: "Facebook",
+        ariaLabel: "Visit TJ’s 4B Park & Camping on Facebook",
+        href: "https://www.facebook.com/howesvalley/",
         variant: "primary",
         external: true,
       },
-    ],
-    footnote: "Open mostly Friday-Sunday. Questions before you book?",
-  },
-  micah: {
-    intro: {
-      eyebrow: "Micah SCW",
-      title: "Never miss an enquiry again",
-      description:
-        "Smart Chat Widget for TJ's 4B Park - built for busy weekends when you're on the tracks, not staring at your phone.",
-    },
-    features: [
       {
-        title: "After-hours answers",
-        text: "Someone browsing at 9pm shouldn't hit a dead end. Micah can answer common questions and capture the enquiry for Jamie and Tanya.",
-      },
-      {
-        title: "Fewer missed messages",
-        text: 'No more "sorry, only just saw this" on Facebook or email. Details get logged so nothing slips through when you\'re out on the property.',
-      },
-      {
-        title: "Still sounds like you",
-        text: "Friendly, straight-up Aussie tone - not a corporate call centre. Micah points people to book, WhatsApp, or call when it matters.",
-      },
-    ],
-    cta: { label: "Try Micah - Chat Now", href: "#micah", variant: "secondary" },
-    placeholder: {
-      eyebrow: "Example conversation",
-      messages: [
-        { from: "guest", text: "G'day - are you open Easter long weekend?" },
-        {
-          from: "micah",
-          text: "Hey! Great question. Easter often books out - I can check typical availability and pass your details to the team. How many in your group, and camping or glamping?",
-        },
-        { from: "guest", text: "2 families, mostly camping. 8 adults, few kids." },
-        {
-          from: "micah",
-          text: "Legend - I've logged that for Jamie and Tanya. Want to lock in dates now? Tap below to book, or WhatsApp us on 0405 672 522.",
-        },
-      ],
-      footer: "Micah SCW - Smart Chat Widget by DOS",
-    },
-    bubble: {
-      greeting:
-        "G'day! I'm Micah - here to help with bookings, glamping, tracks and what to bring. What can I help with today?",
-      status: "TJ's 4B Park - SCW",
-      footer: "Full SCW integration coming soon",
-      primaryCta: { label: "Book your stay", href: "#book" },
-      secondaryCta: {
-        label: "WhatsApp instead",
-        href: "https://wa.me/61405672522",
+        label: "Instagram",
+        ariaLabel: "Visit TJ’s 4B Park & Camping on Instagram",
+        href: "https://www.instagram.com/tjs4bpark/",
+        variant: "primary",
         external: true,
       },
-    },
+      {
+        label: "Hipcamp link coming soon",
+        ariaLabel: "Hipcamp link placeholder",
+        href: "#hipcamp-coming-soon",
+        variant: "outlineDark",
+      },
+    ],
+    footnote: "More booking options coming soon.",
   },
-  faq: {
+  safety: {
     intro: {
-      eyebrow: "Good to know",
-      title: "Frequently asked questions",
+      eyebrow: "Safety and check-in",
+      title: "Everyone must check in and check out",
       description:
-        "Quick answers before you pack the ute. Still unsure? Give us a bell or chat with Micah.",
+        "Please make sure the required safety steps are completed before entering the property or joining any activities.",
+    },
+    notice:
+      "Everyone must check in and check out. All visitors must complete the required acknowledgement, release and indemnity form before entering or participating in activities.",
+  },
+  owners: {
+    intro: {
+      eyebrow: "Meet the owners",
+      title: "A friendly family-run park",
+      description:
+        "TJ’s 4B Park & Camping is kept personal, practical and welcoming by the people behind it.",
     },
     items: [
       {
-        question: "Do I need to book before I come?",
-        answer:
-          "Yes - bookings are compulsory. We only let a limited number of people on the property at the same time, so you're not fighting for space. Give us a call, message on WhatsApp, or use the booking section below.",
+        name: "Romeo",
+        role: "The Manager",
+        description:
+          "Romeo helps keep an eye on the place and is part of the family-business personality visitors know and love.",
       },
       {
-        question: "When are you open?",
-        answer:
-          "We're open mostly Friday to Sunday. If you're unsure about a date or want to visit outside those times, get in touch - Micah can capture your enquiry after hours and we'll get back to you.",
+        name: "Jamie",
+        description:
+          "Jamie helps visitors feel prepared for camping, tracks, rides and group visits.",
       },
       {
-        question: "What should I bring?",
-        answer:
-          "Bring drinking water, plenty of food, and your usual camping gear. If you plan to use the hot showers, a container of water to top up the tank is appreciated. Horses are welcome - we have a cattle yard available.",
-      },
-      {
-        question: "Is experience required for 4WD?",
-        answer:
-          "Not necessarily. Jamie, Tanya and the team can advise on tracks that match your level - from a relaxed roll to something that'll test your wild side. Family friendly and respectful of the bush.",
-      },
-      {
-        question: "What's the difference between camping and glamping?",
-        answer:
-          "Camping is your classic setup - BYO gear, communal or private camp areas. Glamping at Gumnut's is for those who want the outdoor experience with a bit more comfort. Either way, you're surrounded by over 1,000 acres of natural bush.",
-      },
-      {
-        question: "How do I pre-order pizza?",
-        answer:
-          "Fresh pizzas are available - pre-order by the Tuesday before your arrival. Ask when you book or drop us a message and we'll sort it out.",
+        name: "Tanya",
+        description:
+          "Tanya helps keep enquiries, visits and the friendly park experience moving.",
       },
     ],
   },
+  faq: {
+    intro: {
+      eyebrow: "FAQ’s and rules preview",
+      title: "Good to know before you visit",
+      description:
+        "The full FAQ and rules pages are being rebuilt. These are the key topics from the old website that visitors should check before arriving.",
+    },
+    items: [
+      {
+        question: "Do we need to book?",
+        answer:
+          "Yes. Please contact TJ’s 4B Park & Camping before you arrive so the team can confirm availability and requirements.",
+      },
+      {
+        question: "Is glamping available?",
+        answer:
+          "Glamping may be available. Ask about current options when making your booking enquiry.",
+      },
+      {
+        question: "Firewood",
+        answer:
+          "Ask the team about current firewood availability, fire conditions and any fire restrictions before your visit.",
+      },
+      {
+        question: "Rubbish",
+        answer:
+          "Please plan to keep the park clean and check current rubbish requirements with the team.",
+      },
+      {
+        question: "Phone service",
+        answer:
+          "Mobile coverage can vary in rural areas. Check with the team and plan ahead before travelling.",
+      },
+      {
+        question: "Are dirt bikes allowed?",
+        answer:
+          "Contact the team before bringing any bikes or vehicles so they can confirm the current rules.",
+      },
+      {
+        question: "Are quads, buggies, comp trucks allowed?",
+        answer:
+          "Please ask before arriving with quads, buggies, comp trucks or other vehicles. Rules and access may depend on the activity and conditions.",
+      },
+      {
+        question: "What to bring",
+        answer:
+          "Bring suitable camping gear, food, water and outdoor essentials. The full packing guidance is coming soon.",
+      },
+      {
+        question: "Is EFTPOS available?",
+        answer:
+          "Ask the team about current payment options before arriving, especially if mobile service is limited.",
+      },
+      {
+        question: "Can we buy supplies?",
+        answer:
+          "Check with TJ's 4B Park & Camping before your stay so you know what to bring and what may be available nearby.",
+      },
+      {
+        question: "Are pets allowed?",
+        answer:
+          "Please ask about the current pet policy when making your booking enquiry.",
+      },
+      {
+        question: "Can we request a specific camp area?",
+        answer:
+          "You can ask for a preferred camp area, and the team will confirm what is possible based on bookings and conditions.",
+      },
+      {
+        question: "Tracks",
+        answer:
+          "Track access and difficulty may vary with conditions. Check in with the team before driving.",
+      },
+    ],
+  },
+  contact: {
+    intro: {
+      eyebrow: "Contact",
+      title: "Get in touch",
+      description:
+        "Call, email or message the team to book, ask about activities, or confirm what to bring.",
+    },
+  },
   footer: {
     description:
-      "Family owned. Over 1,000 acres of bush, tracks and good times. Live life to its fullest - we're looking forward to seeing you there.",
-    note: "Website rebuild - DOS Calendar & Micah SCW coming soon",
+      "Camping, 4WD adventures, glamping and outdoor experiences in Howes Valley NSW.",
+    note: "Temporary website powered by DOS while the new booking system is being built.",
   },
 } satisfies TourismHomeTemplate;
 

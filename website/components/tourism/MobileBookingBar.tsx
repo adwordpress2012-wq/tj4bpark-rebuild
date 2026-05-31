@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ChatIcon } from "@/components/tourism/TemplateIcons";
 import type { TourismSite } from "@/lib/tourism-template";
 
 type MobileBookingBarProps = {
@@ -8,7 +7,7 @@ type MobileBookingBarProps = {
 
 export function MobileBookingBar({ site }: MobileBookingBarProps) {
   return (
-    <div
+    <nav
       className="fixed bottom-0 left-0 right-0 z-[90] border-t border-tan/40 bg-cream/95 px-4 py-3 backdrop-blur-md md:hidden"
       aria-label="Quick booking actions"
     >
@@ -16,25 +15,25 @@ export function MobileBookingBar({ site }: MobileBookingBarProps) {
         <Link
           href={site.bookHref}
           className="flex min-h-11 flex-1 items-center justify-center rounded-xl bg-gold px-4 text-sm font-bold text-charcoal shadow-sm"
+          aria-label="Go to TJ's 4B Park booking section"
         >
           Book Now
         </Link>
         <a
-          href={site.whatsapp}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={`tel:${site.phone.replace(/\s/g, "")}`}
           className="flex min-h-11 flex-1 items-center justify-center rounded-xl bg-[#25D366] px-4 text-sm font-bold text-white"
+          aria-label="Call TJ's 4B Park & Camping"
         >
-          WhatsApp
+          Call
         </a>
         <Link
-          href={site.chatHref}
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-forest text-white"
-          aria-label="Chat with Micah"
+          href="#contact"
+          className="flex min-h-11 flex-1 items-center justify-center rounded-xl bg-forest px-4 text-sm font-bold text-white"
+          aria-label="Go to contact section"
         >
-          <ChatIcon />
+          Contact
         </Link>
       </div>
-    </div>
+    </nav>
   );
 }

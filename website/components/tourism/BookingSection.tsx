@@ -15,7 +15,9 @@ export function BookingSection({ booking, site }: BookingSectionProps) {
 
         <div className="mx-auto mt-10 max-w-3xl">
           <div
-            className="overflow-hidden rounded-2xl border-2 border-dashed border-forest/30 bg-cream"
+            id="hipcamp-coming-soon"
+            className="overflow-hidden rounded-2xl border border-forest/20 bg-cream shadow-sm"
+            role="region"
             aria-label={booking.calendar.ariaLabel}
           >
             <div className="border-b border-forest/10 bg-forest px-5 py-4 text-white">
@@ -32,25 +34,36 @@ export function BookingSection({ booking, site }: BookingSectionProps) {
               </div>
             </div>
 
-            <div className="flex min-h-[320px] flex-col items-center justify-center gap-4 p-8 text-center sm:min-h-[380px]">
-              <div className="grid w-full max-w-sm grid-cols-7 gap-1 opacity-40">
-                {Array.from({ length: 35 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className={`aspect-square rounded-md ${
-                      i % 7 === 5 || i % 7 === 6
-                        ? "bg-gold/40"
-                        : i > 10 && i < 18
-                          ? "bg-forest/30"
-                          : "bg-tan/30"
-                    }`}
-                  />
-                ))}
-              </div>
-              <p className="max-w-md text-sm leading-relaxed text-charcoal/70">
-                <strong className="text-forest">DOS Calendar</strong>{" "}
-                {booking.calendar.description.replace(/^DOS Calendar\s*/, "")}
+            <div className="p-6 text-center sm:p-8">
+              <p className="mx-auto max-w-xl text-base leading-relaxed text-charcoal/75">
+                {booking.calendar.description}
               </p>
+              <div className="mt-6 grid gap-3 rounded-2xl bg-white p-4 text-left text-sm text-charcoal/75 sm:grid-cols-2">
+                <p>
+                  <strong className="text-forest">Phone:</strong>{" "}
+                  <a href={`tel:${site.phone.replace(/\s/g, "")}`} className="hover:underline">
+                    {site.phone}
+                  </a>
+                </p>
+                <p>
+                  <strong className="text-forest">Email:</strong>{" "}
+                  <a href={`mailto:${site.email}`} className="hover:underline">
+                    {site.email}
+                  </a>
+                </p>
+                <p>
+                  <strong className="text-forest">Facebook:</strong>{" "}
+                  <a href={site.facebook} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    Message the page
+                  </a>
+                </p>
+                <p>
+                  <strong className="text-forest">Instagram:</strong>{" "}
+                  <a href={site.instagram} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                    @tjs4bpark
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
 
@@ -60,11 +73,7 @@ export function BookingSection({ booking, site }: BookingSectionProps) {
           />
 
           <p className="mt-6 text-center text-sm text-charcoal/60">
-            {booking.footnote}{" "}
-            <a href={site.chatHref} className="font-bold text-forest hover:underline">
-              Chat with Micah
-            </a>{" "}
-            - even after hours.
+            {booking.footnote}
           </p>
         </div>
       </div>
