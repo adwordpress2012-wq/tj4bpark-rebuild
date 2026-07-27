@@ -1,58 +1,6 @@
-import "./globals.css";
+
 import Link from "next/link";
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body>
-        <header className="fixed top-0 left-0 right-0 z-50 bg-[#123c34]/95 backdrop-blur border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-
-            <Link href="/" className="text-white font-bold text-xl">
-              TJ&apos;s 4B Park
-            </Link>
-
-            <nav className="hidden md:flex items-center gap-8 text-white font-medium">
-              <Link href="/">Home</Link>
-              <Link href="/stay">Stay</Link>
-              <Link href="/explore">Explore</Link>
-
-              <a
-                href="https://tjs4bpark.guestmateworkspace.com.au"
-                target="_blank"
-                rel="noreferrer"
-              >
-                What&apos;s On
-              </a>
-
-              <Link href="/gallery">Gallery</Link>
-              <Link href="/bookings">Bookings</Link>
-              <Link href="/faq">FAQ</Link>
-              <Link href="/contact">Contact</Link>
-            </nav>
-
-            <a
-              href="#book"
-              className="hidden md:inline-flex bg-amber-400 text-green-950 font-bold px-5 py-3 rounded-md"
-            >
-              Book Your Stay
-            </a>
-
-          </div>
-        </header>
-
-        <div className="pt-20">
-          {children}
-        </div>
-      </body>
-    </html>
-  );
-}
-import Link from "next/link";
+import type { ReactNode } from "react";
 import {
   Calendar,
   MessageSquare,
@@ -69,11 +17,43 @@ import {
 export default function HomePage() {
   return (
     <main className="flex min-h-screen flex-col">
+      {/* NAVBAR */}
+      <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#123c34]/95 backdrop-blur">
+        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4">
+          <Link href="/" className="text-xl font-bold text-white">
+            TJ&apos;s 4B Park
+          </Link>
 
-      {/* =========================================================
-          HERO
-      ========================================================= */}
-      <section className="relative flex h-[85vh] min-h-[600px] items-center justify-center overflow-hidden">
+          <nav className="hidden items-center gap-7 font-medium text-white md:flex">
+            <Link href="/">Home</Link>
+            <Link href="/stay">Stay</Link>
+            <Link href="/explore">Explore</Link>
+
+            <a
+              href="https://tjs4bpark.guestmateworkspace.com.au"
+              target="_blank"
+              rel="noreferrer"
+            >
+              What&apos;s On
+            </a>
+
+            <Link href="/gallery">Gallery</Link>
+            <Link href="/bookings">Bookings</Link>
+            <Link href="/faq">FAQ</Link>
+            <Link href="/contact">Contact</Link>
+          </nav>
+
+          <a
+            href="#book"
+            className="hidden rounded-md bg-amber-400 px-5 py-3 font-bold text-green-950 transition hover:bg-amber-300 md:inline-flex"
+          >
+            Book Your Stay
+          </a>
+        </div>
+      </header>
+
+      {/* HERO */}
+      <section className="relative flex h-[85vh] min-h-[600px] items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0 z-0">
           <img
             src="https://vibe.filesafe.space/1784327637926654810/assets/5c8af200-593c-42ea-a9b3-c76e2b11d047.png"
@@ -89,27 +69,25 @@ export default function HomePage() {
             Real Adventures. Real Memories.
           </p>
 
-          <h1 className="max-w-4xl text-5xl font-bold leading-tight tracking-tight md:text-7xl lg:text-8xl">
+          <h1 className="max-w-4xl text-5xl font-bold leading-tight tracking-tight md:text-6xl lg:text-7xl">
             Camping, 4WD Adventures & Outdoor Fun
           </h1>
 
           <p className="max-w-2xl text-xl font-medium text-gray-200 md:text-2xl">
-            A family owned camping and recreation park in the heart of
-            Howes Valley, NSW.
+            A family owned camping and recreation park in the heart of Howes
+            Valley, NSW.
           </p>
 
-          <div className="flex flex-wrap gap-4 pt-8">
-
-            {/* PARKWITHUS LINK - replace href later */}
+          <div className="flex flex-wrap gap-4 pt-6">
             <a
-              href="#book"
+              id="book"
+              href="#"
               className="inline-flex items-center rounded-md bg-amber-400 px-8 py-4 text-lg font-bold text-green-950 transition hover:bg-amber-300"
             >
               <Calendar className="mr-2 h-5 w-5" />
               Book Your Stay
             </a>
 
-            {/* Super Micah */}
             <a
               href="#contact"
               className="inline-flex items-center rounded-md border border-white bg-transparent px-8 py-4 text-lg font-bold text-white transition hover:bg-white/10"
@@ -118,7 +96,6 @@ export default function HomePage() {
               Chat with Super Micah
             </a>
 
-            {/* Contact */}
             <Link
               href="/contact"
               className="inline-flex items-center rounded-md border border-white bg-transparent px-8 py-4 text-lg font-bold text-white transition hover:bg-white/10"
@@ -130,13 +107,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* =========================================================
-          FEATURES BAR
-      ========================================================= */}
+      {/* FEATURES BAR */}
       <section className="relative z-20 -mt-8 mx-4 rounded-xl border-b bg-white py-10 shadow-sm md:mx-auto md:w-full md:max-w-7xl">
         <div className="px-4 md:px-8">
           <div className="grid grid-cols-2 gap-8 text-center md:grid-cols-3 lg:grid-cols-6">
-
             <Feature
               icon={<TreePine size={32} strokeWidth={1.5} />}
               title="Bush Camping"
@@ -172,17 +146,13 @@ export default function HomePage() {
               title="Pet Friendly"
               text="Bring your furry mates along!"
             />
-
           </div>
         </div>
       </section>
 
-      {/* =========================================================
-          MAIN CARDS
-      ========================================================= */}
+      {/* MAIN CARDS */}
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl space-y-16 px-4 text-center">
-
           <div className="space-y-4">
             <h2 className="text-4xl font-bold tracking-tight text-green-950 md:text-5xl lg:text-6xl">
               Stay. Explore. Relax.
@@ -194,7 +164,6 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 text-left md:grid-cols-2 lg:grid-cols-4">
-
             <AdventureCard
               image="https://vibe.filesafe.space/1784327637926654810/assets/776bec93-556f-4321-a0c9-c4fced0389d1.png"
               title="Camping"
@@ -227,18 +196,14 @@ export default function HomePage() {
               button="View Events"
               external
             />
-
           </div>
         </div>
       </section>
 
-      {/* =========================================================
-          EVENT BANNER
-      ========================================================= */}
+      {/* EVENT BANNER */}
       <section className="bg-white py-12">
         <div className="mx-auto max-w-7xl px-4">
           <div className="relative overflow-hidden rounded-2xl shadow-xl">
-
             <img
               src="https://vibe.filesafe.space/1784327637926654810/assets/4f0b60ce-d186-4c76-b4a2-bec323fd4f3e.png"
               alt="TJ's 4B Park event"
@@ -246,9 +211,7 @@ export default function HomePage() {
             />
 
             <div className="absolute inset-0 flex items-center bg-gradient-to-r from-green-950/95 via-green-950/75 to-transparent">
-
               <div className="max-w-2xl p-8 text-white md:p-12">
-
                 <div className="mb-2 flex items-center gap-2 font-serif text-xl italic text-amber-400">
                   <Calendar size={20} />
                   What&apos;s On
@@ -270,21 +233,16 @@ export default function HomePage() {
                 >
                   View All Events
                 </a>
-
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* =========================================================
-          GALLERY
-      ========================================================= */}
+      {/* GALLERY */}
       <section className="bg-white pb-32 pt-20">
         <div className="mx-auto max-w-7xl px-4">
-
-          <div className="mb-10 flex items-end justify-between">
-
+          <div className="mb-10 flex items-end justify-between gap-4">
             <h2 className="text-3xl font-bold text-green-950 md:text-4xl">
               Gallery Preview
             </h2>
@@ -293,18 +251,15 @@ export default function HomePage() {
               href="/gallery"
               className="group flex items-center gap-2 font-bold text-amber-600 transition hover:text-amber-500"
             >
-              See more in our full gallery
-
+              See our full gallery
               <ArrowRight
                 size={18}
                 className="transition-transform group-hover:translate-x-1"
               />
             </Link>
-
           </div>
 
           <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
-
             <GalleryImage
               src="https://vibe.filesafe.space/1784327637926654810/assets/8c91ae7d-d97c-4024-bf07-fca769c8d4fe.png"
               alt="TJ's 4B Park adventure"
@@ -330,26 +285,19 @@ export default function HomePage() {
               alt="TJ's 4B Park events"
               className="hidden h-48 w-full rounded-xl object-cover md:block"
             />
-
           </div>
         </div>
       </section>
-
     </main>
   );
 }
-
-
-/* ===============================================================
-   FEATURE COMPONENT
-================================================================ */
 
 function Feature({
   icon,
   title,
   text,
 }: {
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
   text: string;
 }) {
@@ -358,22 +306,12 @@ function Feature({
       <div className="text-green-900">{icon}</div>
 
       <div>
-        <h3 className="font-bold text-green-950">
-          {title}
-        </h3>
-
-        <p className="mt-1 text-xs text-gray-500">
-          {text}
-        </p>
+        <h3 className="font-bold text-green-950">{title}</h3>
+        <p className="mt-1 text-xs text-gray-500">{text}</p>
       </div>
     </div>
   );
 }
-
-
-/* ===============================================================
-   ADVENTURE CARD COMPONENT
-================================================================ */
 
 function AdventureCard({
   image,
@@ -390,10 +328,8 @@ function AdventureCard({
   button: string;
   external?: boolean;
 }) {
-
   const content = (
     <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl">
-
       <img
         src={image}
         alt={title}
@@ -401,54 +337,29 @@ function AdventureCard({
       />
 
       <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/20 to-transparent p-8 text-center">
+        <h3 className="mb-3 text-3xl font-bold text-white">{title}</h3>
 
-        <h3 className="mb-3 text-3xl font-bold text-white">
-          {title}
-        </h3>
-
-        <p className="mb-6 text-white/90">
-          {description}
-        </p>
+        <p className="mb-6 text-white/90">{description}</p>
 
         <span className="w-full rounded-md bg-amber-400 px-5 py-3 text-center font-bold text-green-950 transition hover:bg-amber-300">
           {button}
         </span>
-
       </div>
     </div>
   );
 
   if (external) {
     return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a href={href} target="_blank" rel="noreferrer">
         {content}
       </a>
     );
   }
 
-  return (
-    <Link href={href}>
-      {content}
-    </Link>
-  );
+  return <Link href={href}>{content}</Link>;
 }
 
-
-/* ===============================================================
-   GALLERY IMAGE COMPONENT
-================================================================ */
-
-function GalleryImage({
-  src,
-  alt,
-}: {
-  src: string;
-  alt: string;
-}) {
+function GalleryImage({ src, alt }: { src: string; alt: string }) {
   return (
     <img
       src={src}
